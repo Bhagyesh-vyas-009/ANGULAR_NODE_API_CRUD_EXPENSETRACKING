@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-5 m-3 text-center border border-info fs-3 " *ngFor="let exp of expense">
+            <div class="card-body">
+                <h5 className="card-title fw-bold fs-3">Amount :: {{exp.Amount}}</h5>
+                <p className="card-text">Date :: {{exp.Date}}</p>
+
+                <a routerLink="/expense/{{exp.ExpenseID}}" class="btn btn-outline-warning mx-2">View More</a>
+                <a (click)="delete(exp.ExpenseID)" class="btn btn-outline-danger my-2">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
