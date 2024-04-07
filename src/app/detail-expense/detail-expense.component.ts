@@ -21,7 +21,7 @@ export class DetailExpenseComponent {
     })
   }
 
-  deleteEmp() {
+  deleteExp() {
     this._apiExp.deleteExpense(this.id).subscribe((res) => {
       this.router.navigate(['expense'])
     })

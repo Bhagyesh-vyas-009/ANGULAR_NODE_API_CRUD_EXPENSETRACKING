@@ -1,31 +1,31 @@
 <form #EmpForm="ngForm" class="my-5" (ngSubmit)="save(EmpForm.value)">
     <table class="table ">
         <tr>
-            <td>Enter Expense ID</td>
+            <td class="text-danger">Enter Expense ID</td>
             <td>:</td>
             <td><input type="number" name="ExpenseID" [(ngModel)]="data.ExpenseID" /></td>
         </tr>
         <br />
         <tr>
-            <td>Enter Expense Amount</td>
+            <td class="text-danger">Enter Expense Amount</td>
             <td>:</td>
             <td><input type="number" name="Amount" [(ngModel)]="data.Amount" /></td>
         </tr>
         <br>
         <tr>
-            <td>Enter Expense Category</td>
+            <td class="text-danger">Enter Expense Category</td>
             <td>:</td>
             <td><input type="text" name="Category" [(ngModel)]="data.Category" /></td>
         </tr>
         <br>
         <tr>
-            <td>Enter Expense Description</td>
+            <td class="text-danger">Enter Expense Description</td>
             <td>:</td>
             <td><input type="text" name="Description" [(ngModel)]="data.Description" /></td>
         </tr>
         <br>
         <tr>
-            <td>Enter Expense Date</td>
+            <td class="text-danger">Enter Expense Date</td>
             <td>:</td>
             <td><input type="text" name="Date" [(ngModel)]="data.Date" placeholder="DD/MM/YYYY" /></td>
         </tr>
