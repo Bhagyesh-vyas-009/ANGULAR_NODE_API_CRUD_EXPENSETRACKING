@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="card col-5 m-3 text-center border border-info fs-3 " *ngFor="let exp of expense">
             <div class="card-body">
@@ -10,4 +10,25 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<table class="table table-hover ">
+    <thead>
+        <tr>
+            <th scope="col " class="text-danger">ExpenseID</th>
+            <th scope="col" class="text-danger">Amount</th>
+            <th scope="col" class="text-danger">Category</th>
+            <th scope="col" class="text-danger">Description</th>
+            <th scope="col" class="text-danger">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let exp of expense">
+            <th scope="row">{{exp.ExpenseID}}</th>
+            <td>{{exp.Amount}}</td>
+            <td>{{exp.Category}}</td>
+            <td>{{exp.Description}}</td>
+            <td>{{exp.Date}}</td>
+            <td><a routerLink="/expense/{{exp.ExpenseID}}" class="btn btn-outline-warning ">View More</a></td>
+            <td><a (click)="delete(exp.ExpenseID)" class="btn btn-outline-danger ">Delete</a></td>
+        </tr>

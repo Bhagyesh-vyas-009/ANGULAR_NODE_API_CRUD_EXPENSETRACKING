@@ -12,7 +12,7 @@ mongoose.connect(connectionString).then(() => {
 
     app.use(express.json());
     app.use(bodyParser.urlencoded());
-    app.use(cors())
+    app.use(cors());
 
     app.get('/', async (req, res) => {
         const result = await Expense.find();
@@ -24,12 +24,6 @@ mongoose.connect(connectionString).then(() => {
         res.json(result);
     });
 
-    // app.get('/expense/sor', async (req, res) => {
-    //     const result = await Expense.find().sort('Amount');
-    //     res.json(result)
-    //     console.log(result)
-    // });
-
     app.post('/expense/add', async (req, res) => {
         const result = await Expense.create(req.body);
         res.json(result);
@@ -39,12 +33,13 @@ mongoose.connect(connectionString).then(() => {
         const result = await Expense.findOneAndUpdate({ ExpenseID: req.params.id }, req.body);
         res.json(result);
     });
+
     app.delete('/expense/:id', async (req, res) => {
         const result = await Expense.deleteOne({ ExpenseID: req.params.id });
         res.json(result);
     });
 
     app.listen(4000, () => {
-        console.log("listening on 4000");
+        console.log("listening on 4000 at http://localhost:4000");
     });
 });
